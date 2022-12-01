@@ -2,7 +2,7 @@ import {AppBar,Toolbar,styled,Typography} from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 const Header = styled(AppBar)`
-    background: #ffffff;
+    background: black;
 `;
 
 const Tabs = styled(NavLink)`

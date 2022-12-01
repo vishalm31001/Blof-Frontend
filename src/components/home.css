@@ -1,0 +1,12 @@
+.img1{
+    height:91.5vh;
+    width:100vw;
+    background-image:url(./images/A.jpg);
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-position:center;
+    object-fit:contain;
+    background-size: cover;
+}
