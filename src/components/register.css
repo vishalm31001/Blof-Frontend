@@ -1,0 +1,9 @@
+.img3{
+    height:91.5vh;
+    background-image:url(./images/A.jpg);
+    overflow: hidden;
+    background-size: 100% 100%;
+}
+.data{
+    margin-top:16%;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button } from "@mui/material";
 import { editUser, getUser } from "../services/api";
 import { useNavigate, useParams } from 'react-router-dom';
+import "./register.css";
 
 const Container = styled(FormGroup)`
     width: 40%;
@@ -49,30 +50,58 @@ const EditUser = () =>{
         navigate('/lis');
     }
 
-    return(
-        <Container>
-            <Typography variant="h4" sx={{fontFamily: 'Pacifico'}}>Edit User</Typography>
+    return (
+      <div className="img3">
+        <div className="data">
+          <Container>
+            <Typography variant="h4" sx={{ fontFamily: "Pacifico" }}>
+              Edit User
+            </Typography>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Pacifico'}}>Name</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="name" value={user.name}/>
+              <InputLabel sx={{ fontFamily: "Pacifico" }}>Name</InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="name"
+                value={user.name}
+              />
             </FormControl>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Pacifico'}}>Username</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="username" value={user.username}/>
+              <InputLabel sx={{ fontFamily: "Pacifico" }}>Username</InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="username"
+                value={user.username}
+              />
             </FormControl>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Pacifico'}}>Email</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="email" value={user.email}/>
+              <InputLabel sx={{ fontFamily: "Pacifico" }}>Email</InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="email"
+                value={user.email}
+              />
             </FormControl>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Pacifico'}}>Phone</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="phone" value={user.phone}/>
+              <InputLabel sx={{ fontFamily: "Pacifico" }}>Phone</InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="phone"
+                value={user.phone}
+              />
             </FormControl>
             <FormControl>
-                <BootstrapButton variant="contained" onClick={()=>editUserDetails()} color="success">Edit</BootstrapButton>
+              <BootstrapButton
+                variant="contained"
+                onClick={() => editUserDetails()}
+                color="success"
+              >
+                Edit
+              </BootstrapButton>
             </FormControl>
-        </Container>
-    )
+          </Container>
+        </div>
+      </div>
+    );
 }
 
 export default EditUser;

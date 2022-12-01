@@ -2,6 +2,7 @@ import { useEffect, useState} from 'react';
 import { Table, TableBody, TableCell, TableHead, TableRow, styled, Button } from "@mui/material";
 import { getUsers, deleteUser } from "../services/api";
 import { Link } from 'react-router-dom';
+import "./list.css";
 
 const StyledTable = styled(Table)`
     width: 90%;
@@ -42,39 +43,50 @@ const Lists = () =>{
         await deleteUser(id);
         getAllUser();
     }
-    return(
+    return (
+      <div className="img2">
         <StyledTable>
-            <TableHead>
-                <Thead>
-                    <TableCell>Name</TableCell>
-                    <TableCell>Usrname</TableCell>
-                    <TableCell>Email</TableCell>
-                    <TableCell>Phone</TableCell>
-                    <TableCell></TableCell>
-                </Thead>
-            </TableHead>
-            <TableBody>
-                {
-                    users && users.map(user => (
-                        <Tbody key={user._id}>
-                            <TableCell>{user.name}</TableCell>
-                            <TableCell>{user.username}</TableCell>
-                            <TableCell>{user.email}</TableCell>
-                            <TableCell>{user.phone}</TableCell>
-                            <TableCell>
-                                <Button variant="contained" color="success" style={{marginRight: 10}} component={Link} to={`/edt/${user._id}`}>
-                                    Edit
-                                </Button>
-                                <Button variant="contained" style={{backgroundColor: 'red'}} onClick={()=>deleteUserDetails(user._id)}>
-                                    Delete
-                                </Button>
-                            </TableCell>
-                        </Tbody>
-                    ))
-                }
-            </TableBody>
+          <TableHead>
+            <Thead>
+              <TableCell>Name</TableCell>
+              <TableCell>Usrname</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Phone</TableCell>
+              <TableCell></TableCell>
+            </Thead>
+          </TableHead>
+          <TableBody>
+            {users &&
+              users.map((user) => (
+                <Tbody key={user._id}>
+                  <TableCell>{user.name}</TableCell>
+                  <TableCell>{user.username}</TableCell>
+                  <TableCell>{user.email}</TableCell>
+                  <TableCell>{user.phone}</TableCell>
+                  <TableCell>
+                    <Button
+                      variant="contained"
+                      color="success"
+                      style={{ marginRight: 10 }}
+                      component={Link}
+                      to={`/edt/${user._id}`}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      variant="contained"
+                      style={{ backgroundColor: "red" }}
+                      onClick={() => deleteUserDetails(user._id)}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                </Tbody>
+              ))}
+          </TableBody>
         </StyledTable>
-    )
+      </div>
+    );
 }
 
 export default Lists;

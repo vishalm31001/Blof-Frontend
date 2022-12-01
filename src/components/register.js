@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button } from "@mui/material";
 import { addUser } from "../services/api";
 import { useNavigate } from 'react-router-dom';
+import "./register.css";
 
 const Container = styled(FormGroup)`
     width: 40%;
@@ -39,30 +40,69 @@ const Register = () =>{
         navigate('/lis');
     }
 
-    return(
-        <Container>
-            <Typography variant="h4" sx={{fontFamily: 'Brush Script MT, cursive'}}>Register New User</Typography>
+    return (
+      <div className="img3">
+        <div className="data">
+          <Container>
+            <Typography
+              variant="h4"
+              sx={{ fontFamily: "Brush Script MT, cursive" }}
+            >
+              Register New User
+            </Typography>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Brush Script MT, cursive'}}>Name</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="name" value={name}/>
+              <InputLabel sx={{ fontFamily: "Brush Script MT, cursive" }}>
+                Name
+              </InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="name"
+                value={name}
+              />
             </FormControl>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Brush Script MT, cursive'}}>Username</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="username" value={username}/>
+              <InputLabel sx={{ fontFamily: "Brush Script MT, cursive" }}>
+                Username
+              </InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="username"
+                value={username}
+              />
             </FormControl>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Brush Script MT, cursive'}}>Email</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="email" value={email}/>
+              <InputLabel sx={{ fontFamily: "Brush Script MT, cursive" }}>
+                Email
+              </InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="email"
+                value={email}
+              />
             </FormControl>
             <FormControl>
-                <InputLabel sx={{fontFamily: 'Brush Script MT, cursive'}}>Phone</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name="phone" value={phone}/>
+              <InputLabel sx={{ fontFamily: "Brush Script MT, cursive" }}>
+                Phone
+              </InputLabel>
+              <Input
+                onChange={(e) => onValueChange(e)}
+                name="phone"
+                value={phone}
+              />
             </FormControl>
             <FormControl>
-                <BootstrapButton variant="contained" onClick={()=>addUserDetails()} color="success">Submit</BootstrapButton>
+              <BootstrapButton
+                variant="contained"
+                onClick={() => addUserDetails()}
+                color="success"
+              >
+                Submit
+              </BootstrapButton>
             </FormControl>
-        </Container>
-    )
+          </Container>
+        </div>
+      </div>
+    );
 }
 
 export default Register;

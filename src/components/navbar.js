@@ -2,11 +2,11 @@ import {AppBar,Toolbar,styled,Typography} from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 const Header = styled(AppBar)`
-    background: black;
+  background: #64665E;
 `;
 
 const Tabs = styled(NavLink)`
-  color: #ff0000;
+  color: black;
   font-size: 25px;
   font-family: "Brush Script MT", cursive;
   font-weight: bold;
@@ -25,7 +25,7 @@ const Navbar = () =>{
               fontFamily: "Pacifico",
               fontWeight: 600,
               letterSpacing: ".2rem",
-              color: " #FF0000",
+              color: " black",
               textDecoration: "none",
             }}
           >
